@@ -146,7 +146,7 @@ sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
 
 ## Firewall rules (UFW)
 
-```
+```bash
 22/tcp    SSH
 80/tcp    HTTP (redirects to HTTPS)
 443/tcp   HTTPS

@@ -25,7 +25,7 @@ export function SectionView({ section, index, total, onPrev, onNext }: SectionVi
   return (
     <div className="flex h-full flex-col overflow-hidden">
       <div
-        className="bg-gradient-to-r from-white/5 to-transparent px-6 py-8 sm:px-8"
+        className="bg-linear-to-r from-white/5 to-transparent px-6 py-8 sm:px-8"
         style={{ borderColor: section.color }}
       >
         <p className="text-sm text-text-muted">{section.icon} {section.title}</p>
