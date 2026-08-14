@@ -1,0 +1,17 @@
+language: en-US
+
+reviews:
+  profile: chill          # assertive | chill — chill is less nitpicky
+  request_changes_workflow: false   # won't block merges, just comments
+  auto_review:
+    enabled: true
+    drafts: false         # skip draft PRs
+    base_branches:
+      - main
+
+  path_filters:
+    - "!dist/**"          # ignore build output
+    - "!node_modules/**"
+
+chat:
+  auto_reply: true        # responds if you ask it follow-up questions in comments
