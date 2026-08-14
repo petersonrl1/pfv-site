@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Fonts — CSS variables set by next/font/google in layout.tsx */
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, serif;
+  --font-mono: var(--font-mono), monospace;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Background scale */
+  --color-bg-base: #0d1117;
+  --color-bg-surface: #161b22;
+  --color-bg-elevated: #1c2128;
+  --color-bg-overlay: #21262d;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Border scale */
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-default: rgba(255, 255, 255, 0.10);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Text scale */
+  --color-text-primary: #e8e6e3;
+  --color-text-secondary: #c9d1d9;
+  --color-text-muted: #8b949e;
+  --color-text-faint: #484f58;
+
+  /* Accent palette */
+  --color-accent-amber: #e8a020;
+  --color-accent-amber-light: #f4c055;
+  --color-accent-teal: #2a9d8f;
+  --color-accent-coral: #e76f51;
+  --color-accent-steel: #457b9d;
+  --color-accent-plum: #6d6875;
+  --color-accent-sky: #a8dadc;
+
+  /* Border radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.625rem;
+
+  /* Animations */
+  --animate-fadeIn: fadeIn 0.25s ease-out;
+  --animate-slideIn: slideIn 0.2s ease-out;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-base text-text-primary font-sans antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer utilities {
+  .text-gradient-amber {
+    background: linear-gradient(135deg, #e8a020, #f4c055);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(22, 27, 34, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .animate-fadeIn { animation: var(--animate-fadeIn); }
+  .animate-slideIn { animation: var(--animate-slideIn); }
+}
+
+@media print {
+  nav, aside, header, .no-print { display: none !important; }
+  body { background: white; color: black; font-size: 12pt; }
+  main { width: 100%; max-width: 100%; padding: 0; margin: 0; }
+  .print-avoid-break { break-inside: avoid; }
+  .print-page-break { break-before: page; }
 }
