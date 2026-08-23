@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pfv-dev",
+      "runtimeExecutable": "/bin/zsh",
+      "runtimeArgs": [
+        "-c",
+        "export PATH=/Users/rosspeterson/.nvm/versions/node/v20.19.5/bin:$PATH && exec npm run dev"
+      ],
+      "port": 3000
+    }
+  ]
+}

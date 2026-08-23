@@ -34,7 +34,7 @@ const resources = [
     title: "SOPs",
     description: "Printable standard operating procedures for all AV roles.",
     icon: "📋",
-    status: "coming-soon",
+    status: "available",
   },
 ];
 
