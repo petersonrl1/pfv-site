@@ -16,17 +16,17 @@ The Producer is responsible for the overall coordination and execution of the Su
 - [ ] At 8:30am, rope off the stairs. The rope and signs are behind the rollable Connection table on the bottom shelf, or in the cabinet in the lobby.
 - [ ] Print sermon notes
 
-* 1 copy for the A/V booth
+  * 1 copy for the A/V booth
 
 - [ ] Print service flow from Planning Center
 
-* 1 copy for the A/V booth
-* 5 copies for the front sanctuary pew for the walk-through
+  * 1 copy for the A/V booth
+  * 5 copies for the front sanctuary pew for the walk-through
 
 - [ ] Print announcement scripts for announcers
 
-* 1 copy for the A/V booth
-* 2 copies for the front sanctuary pew for announcers.
+  * 1 copy for the A/V booth
+  * 2 copies for the front sanctuary pew for announcers.
 
 - [ ] Turn on the Lobby TV downstairs in the foyer, volume at 20 is usually fine. Remote controller is on the shelf behind the rollable Connection table.
 - [ ] Turn on the Confidence monitor \- remote is labeled in the AV closet at the front of the sanctuary or on the shelf behind the pastor’s old podium.

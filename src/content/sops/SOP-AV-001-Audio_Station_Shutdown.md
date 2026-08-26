@@ -23,11 +23,10 @@ The Allen & Heath SQ6 is a professional digital mixing console. Digital mixers s
 
 Confirm all of the following before starting the shutdown:
 
-|  ☐  | The event/service is fully over and no one is still using audio                        |
-| :-: | :------------------------------------------------------------------------------------- |
-|  ☐  | All microphones and monitors are no longer needed — you are ready to mute all channels |
-|  ☐  | Any recording or streaming has been stopped                                            |
-|  ☐  | You have saved the current scene (if any changes were made — see Step 2\)              |
+- [ ] The event/service is fully over and no one is still using audio
+- [ ] All microphones and monitors are no longer needed — you are ready to mute all channels
+- [ ] Any recording or streaming has been stopped
+- [ ] You have saved the current scene (if any changes were made — see Step 2\)
 
 ## **Shutdown Steps**
 
