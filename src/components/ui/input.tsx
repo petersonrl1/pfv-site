@@ -1,8 +1,17 @@
 import type { InputHTMLAttributes } from "react";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+export type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
 export function Input({ className, ...props }: InputProps) {
-  return <input className={cn("rounded-2xl border border-border-default bg-bg-base px-4 py-3 text-sm text-text-primary outline-none transition focus:border-white/40", className)} {...props} />;
+  return (
+    <input
+      className={cn(
+        "w-full min-h-9 px-2.5 py-1.5 text-sm text-text bg-surface border border-divider outline-none transition-colors",
+        "hover:border-text/45 focus-visible:border-accent",
+        className,
+      )}
+      {...props}
+    />
+  );
 }
