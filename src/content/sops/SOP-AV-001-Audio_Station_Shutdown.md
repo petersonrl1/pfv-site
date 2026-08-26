@@ -2,6 +2,8 @@
 title: SQ6 Mixer - Proper Shutdown Procedure
 role: Sound Operator
 updatedAt: 2026-08-14
+kind: sop
+domain: audio
 ---
 
 | Document \#:              | SOP-AV-001                                                     |

@@ -2,6 +2,8 @@
 title: Producer Role & Responsibilities
 role: Service Producer
 updatedAt: 2026-08-15
+kind: sop
+domain: audio
 ---
 
 ## **Role Overview**
