@@ -10,25 +10,32 @@ domain: audio
 
 The Producer is responsible for the overall coordination and execution of the Sunday morning service. This role ensures that all technical, logistical, and personnel elements are in place so that the service runs smoothly and the congregation can worship without distraction.
 
-## **Pre-Service Timeline**
+## **Friday**
+
+### **~12:00 PM**
+
+Some time in this time slot, send out the Service Team email directly from Planning Center (PC).
+
+1. Log into PC, navigate into Services and choose the specific plan for the upcoming Sunday service. Click on the “Teams” tab, then click the mail icon in the upper right corner.
+2. Make sure the following teams are selected: Band (FV), Production, Speaker, Announcements. Use the “Add” button if these 4 teams are not immediately selected. Click Next.
+3. In the top left corner will be a drop down menu with template options for the email. Choose “Prov Fairview Service Team - Friday Email”. Add the date into the header (e.g. “Prov Fairview 9/6 Service Team - Friday Email”). This will send to all listed recipients and include their assigned roles for Sunday. Click Send, and you are done.
+
+## **Sunday: Pre-Service Timeline**
 
 ### **8:00 AM — Arrival**
 
 - [ ] Place the box of bulletins on Jenn’s desk onto the window sill at the top of the stairs, opposite side from the elevator.
 - [ ] At 8:30am, rope off the stairs. The rope and signs are behind the rollable Connection table on the bottom shelf, or in the cabinet in the lobby.
 - [ ] Print sermon notes
-
-  * 1 copy for the A/V booth
+  - 1 copy for the A/V booth
 
 - [ ] Print service flow from Planning Center
-
-  * 1 copy for the A/V booth
-  * 5 copies for the front sanctuary pew for the walk-through
+  - 1 copy for the A/V booth
+  - 5 copies for the front sanctuary pew for the walk-through
 
 - [ ] Print announcement scripts for announcers
-
-  * 1 copy for the A/V booth
-  * 2 copies for the front sanctuary pew for announcers.
+  - 1 copy for the A/V booth
+  - 2 copies for the front sanctuary pew for announcers.
 
 - [ ] Turn on the Lobby TV downstairs in the foyer, volume at 20 is usually fine. Remote controller is on the shelf behind the rollable Connection table.
 - [ ] Turn on the Confidence monitor \- remote is labeled in the AV closet at the front of the sanctuary or on the shelf behind the pastor’s old podium.
