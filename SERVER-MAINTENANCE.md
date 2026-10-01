@@ -13,7 +13,8 @@ Droplet: `provfairview.church` — Ubuntu 24.04, DigitalOcean $6/mo, 1GB RAM
 | SSL cert renewal             | Certbot cron job      |
 | App process restart on crash | PM2                   |
 | Node.js version upgrades     | Manual                |
-| npm package updates          | Manual                |
+| App dependency updates      | Update and test locally, then commit and deploy |
+| App dependency installation | Deployment runs `npm ci --omit=dev` |
 | PM2 updates                  | Manual                |
 
 ---
@@ -39,14 +40,17 @@ pm2 status
 pm2 logs pfv-site --lines 50
 ```
 
-### Check for outdated npm packages
+### Review app dependencies locally
+
+Run these checks in your local project, in a separate terminal from the SSH session:
 
 ```bash
-cd /var/www/provfairview.church
+cd /Users/rosspeterson/Sites/PFV/pfv-site
 npm outdated
 npm audit
-npm audit fix
 ```
+
+Apply any fixes locally using the dependency update process below. Do not run `npm update`, `npm install <package>`, or `npm audit fix` in the production app directory. These can change the server's lockfile and block future deployments.
 
 ### Update PM2
 
@@ -92,7 +96,7 @@ nvm install 24
 nvm alias default 24
 ```
 
-Update `.nvmrc` in the repo:
+Update `.nvmrc` in your local repo, not the server checkout, and test the app with the selected Node version before committing:
 
 ```bash
 echo "24" > .nvmrc
@@ -101,20 +105,36 @@ git commit -m "chore: update Node to v24"
 git push origin main
 ```
 
-### Update npm dependencies
+### Update npm dependencies locally
+
+Run these commands on your computer, outside the SSH session:
 
 ```bash
-cd /var/www/provfairview.church
+cd /Users/rosspeterson/Sites/PFV/pfv-site
 npm outdated
 npm update
 ```
 
-For major version bumps (review carefully):
+For targeted updates, use `npm install <package>@<version>`. Review major version migration requirements before upgrading. If addressing audit findings, run `npm audit fix` locally and review the resulting changes.
+
+Validate and commit both dependency files:
 
 ```bash
-npx npm-check-updates -u
-npm install
+npm run lint
+npm run build
+git diff -- package.json package-lock.json
+git add package.json package-lock.json
+git commit -m "chore: update app dependencies"
+git push origin main
 ```
+
+Push only after validation succeeds. If working on a feature branch, push that branch and merge its pull request into `main` instead.
+
+The deployment workflow builds the app, copies the build to the server, updates the server checkout, runs `npm ci --omit=dev` to install the committed dependency versions, and restarts PM2. You do not need to manually update app dependencies on the server. After deployment, confirm the GitHub Actions run succeeded and check the live site.
+
+Keep the production checkout free of local edits. The uploaded build, source commit, and installed dependencies must match. If deployment reports local changes on the server, preserve and investigate them before retrying; do not force a reset or run dependency updates to work around the error.
+
+Global PM2, Node.js, and operating-system updates remain separate server maintenance tasks.
 
 ### Reboot the droplet
 
